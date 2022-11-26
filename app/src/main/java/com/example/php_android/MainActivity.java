@@ -76,8 +76,8 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onResponse(String response) {
                                 result =response.trim();
-                                Toast.makeText(MainActivity.this, response.trim(), Toast.LENGTH_SHORT).show();
-                                textView.setText(result);//*********已成功改寫成功哭爛!!!!!!!!!
+                                //Toast.makeText(MainActivity.this, response.trim(), Toast.LENGTH_SHORT).show();
+                                //textView.setText(result);//*********已成功改寫成功哭爛!!!!!!!!!
 
 
                                 try{
@@ -87,8 +87,8 @@ public class MainActivity extends AppCompatActivity {
 
                                         String strcname = jsonObject.getString("name");
                                         String strename = jsonObject.getString("price");
-                                        arysport.add(strcname);
-                                        aryengsport.add(strename);
+                                        arysport.add(strcname);//要將所要求的飯店名稱寫入陣列
+                                        aryengsport.add(strename);//將所要求的價格寫入陣列
 
                                     }
                                 }
@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
                                listlayoutadapter adasports=new listlayoutadapter(MainActivity.this);
 
                                 // 設定 ListView 的資料來源
-                                hotel.setAdapter(adasports);
+                                hotel.setAdapter(adasports);//mainactivity裡的listview設定適配器
 
 
 
@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
                         }){
                             protected Map<String, String> getParams() {
                                 Map<String,String> params = new HashMap<String,String>();
-                                params.put("data",s);
+                                params.put("data",s);//和php的參數做連結
 
                                 return params;
                             }
@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
                         // 設定 ListView 的資料來源
                         hotel.setAdapter(adasports);*/
 
-                testtextview.setText(result);
+                //testtextview.setText(result);
             }
 
 
@@ -181,13 +181,13 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public int getCount() {
             //取得ArrayList的總數 (要注意，跟array不同之處)
-            return arysport.size();
+            return arysport.size();//用飯店名稱的陣列
         }
 
         @Override
         public Object getItem(int position) {
             //要用get(position)取得資料 (要注意，跟array不同之處)
-            return  arysport.get(position);
+            return  arysport.get(position);//用飯店名稱的陣列
         }
 
         @Override
@@ -198,17 +198,17 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
 
-            convertView = listlayoutInflater.inflate(R.layout.listlayout,null);
+            convertView = listlayoutInflater.inflate(R.layout.listlayout,null);//用自己新增的listview.xml在這裡的名稱是叫 listlayout
 
             //設定自訂樣板上物件對應的資料。
             //ImageView img_logo = (ImageView) convertView.findViewById(R.id.imglogo);
-            TextView lbl_name = (TextView) convertView.findViewById(R.id.lblname);//在listlayout裡的textview設定名字的
-            TextView lbl_engname = (TextView) convertView.findViewById(R.id.lblengname);
+            TextView lbl_name = (TextView) convertView.findViewById(R.id.lblname);//在listlayout裡的textview(lblname)設定名字的
+            TextView lbl_engname = (TextView) convertView.findViewById(R.id.lblengname);//在listlayout裡的texview(lblengname)設定價格的
 
             //要用get(position)取得資料 (要注意，跟array不同之處)
             //img_logo.setImageResource(aryimas.get(position));
-            lbl_name.setText(arysport.get(position));
-            lbl_engname.setText(aryengsport.get(position));
+            lbl_name.setText(arysport.get(position));//用存名字的陣列去給listlayout裡的textview資料
+            lbl_engname.setText(aryengsport.get(position));//用存名字的陣列去給listlayout裡的textview資料
 
             return convertView;
         }

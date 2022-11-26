@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     String s;
     String result;
     //String resultnew;
-    ListView hotel;//listView的新名稱，要跟在activity_main裡的listview結合
+    ListView hotel;//listView的新名稱，要跟在activity_main.xml裡的listview結合
     TextView testtextview;
 
     ArrayList<String> hotelnamearray;
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         arysport=new ArrayList<>();//要存放飯店名字的陣列
         aryengsport=new ArrayList<>();//要存放飯店價格的陣列
 
-        String strjson = "[{\"cname\":\"籃球\",\"ename\":\"basketball\"},{\"cname\":\"足球\",\"ename\":\"soccer\"},{\"cname\":\"排球\",\"ename\":\"volleyball\"}]";
+       // String strjson = "[{\"cname\":\"籃球\",\"ename\":\"basketball\"},{\"cname\":\"足球\",\"ename\":\"soccer\"},{\"cname\":\"排球\",\"ename\":\"volleyball\"}]";
 
 
 

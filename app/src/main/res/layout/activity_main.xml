@@ -21,4 +21,26 @@
         android:layout_height="wrap_content"
         android:text="SAVE"
         ></Button>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="162dp"
+        android:text="TextView" />
+
+    <ListView
+        android:id="@+id/lsvsports"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+
+    </ListView>
+
+    <TextView
+        android:id="@+id/testtextView"
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
+        android:text="TestTextView"
+
+        />
 </LinearLayout>
